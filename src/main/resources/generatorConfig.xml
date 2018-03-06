@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\maven\LocalWarehouse\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/classroom?characterEncoding=UTF-8"
+                        userId="root"
+                        password="123" />
+
+        <javaModelGenerator targetPackage="classroom.pojo" targetProject="src/main/java" />
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="classroom.mapper" targetProject="src/main/java" />
+
+        <table tableName="classroom_detail">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+
+</generatorConfiguration>
